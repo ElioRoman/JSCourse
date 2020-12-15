@@ -10,7 +10,7 @@ it ('get a property', () => {
     expect(result).toHaveProperty('Bob')
 });
 
-test('get returns', () => {
+it('get returns', () => {
     const getAdults = jest.fn(() => true);
   
     getAdults();
