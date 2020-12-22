@@ -1,9 +1,10 @@
-'use strict'
 
-export function saveCalls (fn) {
-    function withMemory(...args){
+
+function saveCalls(fn) {
+
+    function withMemory(...args) {
         withMemory.calls.push(args);
-        return fn.apply(this, args)
+        return fn.apply(this, args);
     }
     withMemory.calls = [];
     return withMemory;
@@ -27,6 +28,6 @@ const user = {
 
 const methodWithMemory = saveCalls(user.sayHi);
 
-console.log (methodWithMemory.apply({ name: 'Tom' })); // 'Tom'
+console.log(methodWithMemory.apply({ name: 'Tom' })); // 'Tom'
 
 console.log(methodWithMemory.calls);
