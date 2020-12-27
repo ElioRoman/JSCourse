@@ -7,7 +7,7 @@ const students = [
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Dec'];
 
 export const studentsBirthDays = () => {
-  const sortedStudents = students.sort(
+  const sortedStudents = [...students].sort(
     (a, b) => new Date(a.birthDate).getDate() - new Date(b.birthDate).getDate(),
   );
   const result = sortedStudents.reduce((acc, { name, birthDate }) => {
