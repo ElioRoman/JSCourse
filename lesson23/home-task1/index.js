@@ -52,7 +52,7 @@ const updateTask = event => {
   }
   const currentItem = event.target.closest('.list__item');
   const currentTask = tasks.find(item => item.id === currentItem.dataset.id);
-  currentTask.done = !currentTask.done;
+  currentTask.done = event.target.checked;
   renderListItems(tasks);
 };
 
