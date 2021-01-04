@@ -1,4 +1,4 @@
-window.addEventListener('error', function onUnhandledError(err) {
+window.addEventListener('error', err => {
   console.error('error', err.message);
 });
 
