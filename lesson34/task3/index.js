@@ -11,7 +11,8 @@ const formChanges = () => {
 };
 loginForm.addEventListener('input', formChanges);
 
-const getUserInfo = () => {
+const getUserInfo = e => {
+  e.preventDefault();
   const dataForm = [...new FormData(loginForm)].reduce(
     (acc, [field, value]) => ({ ...acc, [field]: value }),
     {},
